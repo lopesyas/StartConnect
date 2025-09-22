@@ -1,37 +1,5 @@
-# startconnect.py
-
-class Startup:
-    def __init__(self, responsavel, email, nome, pitch, tema, cnpj, site="", rede_social=""):
-        self.responsavel = responsavel
-        self.email = email
-        self.nome = nome
-        self.pitch = pitch
-        self.tema = tema
-        self.cnpj = cnpj
-        self.site = site
-        self.rede_social = rede_social
-
-    def __str__(self):
-        return (f"Startup: {self.nome}\n"
-                f"Responsável: {self.responsavel}\n"
-                f"Email: {self.email}\n"
-                f"Tema: {self.tema}\n"
-                f"Pitch: {self.pitch}\n")
-
-
-class Investidor:
-    def __init__(self, nome, contato, email, empresa):
-        self.nome = nome
-        self.contato = contato
-        self.email = email
-        self.empresa = empresa
-
-    def __str__(self):
-        return (f"Investidor: {self.nome}\n"
-                f"Contato: {self.contato}\n"
-                f"Email: {self.email}\n"
-                f"Empresa: {self.empresa}\n")
-
+from startup import Startup
+from investidor import Investidor
 
 class StartConnect:
     def __init__(self):
@@ -119,16 +87,3 @@ class StartConnect:
                 print(s)
         else:
             print("Nenhuma startup encontrada nesse tema.\n")
-
-
-# Executa o programa
-if __name__ == "__main__":
-    app = StartConnect()
-    while True:
-        escolha = app.menu_principal()
-        if escolha == "1":
-            app.cadastrar_startup()
-        elif escolha == "2":
-            app.cadastrar_investidor()
-        else:
-            print("Opção inválida! Tente novamente.\n")
